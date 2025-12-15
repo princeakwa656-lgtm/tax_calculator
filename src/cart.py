@@ -12,7 +12,7 @@ def apply_discount(price, discount_percentage):
     final_price = price - discount_percentage 
     
     if final_price < 0:
-        return 0.0
+        return price - (price * (discount_percentage / 100))
     return final_price
 
 def calculate_tax(subtotal, tax_rate):
@@ -21,4 +21,4 @@ def calculate_tax(subtotal, tax_rate):
     TODO: Implement this function.
     """
     # Currently returns 0, which is illegal!
-    return 0.0
+    return subtotal * tax_rate
